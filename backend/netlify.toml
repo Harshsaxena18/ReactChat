@@ -1,0 +1,9 @@
+[build]
+  base = "/"
+  publish = "dist" # The folder containing your built files
+  command = "npm run build" # Command to build your project
+
+[[redirects]]
+  from = "/*"
+  to = "/dist/server.js" # Route all requests to your server
+  status = 200
