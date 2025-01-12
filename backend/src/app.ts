@@ -69,6 +69,10 @@ app.get("/health", (req, res) => {
   res.send("healthy running");
 });
 
+app.get("/", (req, res) => {
+  res.send("Welcome");
+});
+
 // auth Routes
 app.use("/auth", authRoutes);
 
