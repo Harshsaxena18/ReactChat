@@ -1,15 +1,18 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "dockerfile",
-        "use": "@vercel/node"
+  "version": 2,
+  "builds": [
+    {
+      "src": "src/server.ts", // Entry point for your TypeScript server
+      "use": "@vercel/node",  // Use the Node.js builder
+      "config": {
+        "includeFiles": ["src/**/*.ts", "dist/**/*.js"] // Include necessary files
       }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "/"
-      }
-    ]
-  }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",         // Route all requests to your server
+      "dest": "src/server.ts" // Destination for all routes
+    }
+  ]
+}
