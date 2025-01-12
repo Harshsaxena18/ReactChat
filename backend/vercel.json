@@ -2,17 +2,17 @@
   "version": 2,
   "builds": [
     {
-      "src": "src/server.ts", // Entry point for your TypeScript server
-      "use": "@vercel/node",  // Use the Node.js builder
+      "src": "src/server.ts", 
+      "use": "@vercel/node",  
       "config": {
-        "includeFiles": ["src/**/*.ts", "dist/**/*.js"] // Include necessary files
+        "includeFiles": ["src/**/*.ts", "dist/**/*.js"] 
       }
     }
   ],
   "routes": [
     {
-      "src": "/(.*)",         // Route all requests to your server
-      "dest": "src/server.ts" // Destination for all routes
+      "src": "/(.*)",         
+      "dest": "src/server.ts" 
     }
   ]
 }
