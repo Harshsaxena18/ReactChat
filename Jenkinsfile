@@ -2,8 +2,8 @@ pipeline {
   agent any
 
   environment {
-    DOCKER_IMAGE_NAME = "zenchatbackend"
-    DOCKER_CONTAINER_NAME = "zenchatbackend"
+    DOCKER_IMAGE_NAME = "reactchatbackend"
+    DOCKER_CONTAINER_NAME = "reactchatbackend"
     VERSION_COMMIT_HASH = sh(script: 'git rev-parse --short HEAD', returnStdout: true).trim() // versioning the build images
   }
 
@@ -57,8 +57,8 @@ pipeline {
             def envContent = """
             NODE_ENV=development
             PORT=5000
-            CORS_URL=https://zenchat-indol.vercel.app
-            SERVER_URL=https://zenchatapi.bytenode.xyz
+            CORS_URL=https://reactchatpro.vercel.app/
+            SERVER_URL=https://reactchatbackend.vercel.app/
             DB_URL=${DB_URL}
             DB_NAME=ReactChat
             DB_MIN_POOL_SIZE=2
